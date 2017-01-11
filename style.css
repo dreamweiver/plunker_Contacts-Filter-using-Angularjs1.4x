@@ -1,0 +1,18 @@
+
+header,footer {
+  height:25px;
+  background-color:#aaaaaa;
+  color: #cccccc;
+}
+
+ul  {
+  list-style-type: none;
+}
+
+ul li{
+  padding :10px;
+}
+
+input {
+  margin-left:45px;
+}

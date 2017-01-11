@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.9/angular.js" data-semver="1.4.9"></script>
+    <script src="app.js"></script>
+    <script src="contactsService.js"></script>
+    <script src="contactsCtrl.js"></script>
+  </head>
+
+  <body ng-controller="contactsCtrl">
+    <header> Contacts Directory</header>
+    <br>
+    <input type="text" ng-model="contactName" placeholder="Enter Contact Name "/>
+    <br>
+    <hr>
+    <ul>
+      <li ng-repeat="contact in clonedList | filter:contactsFilter">
+        <img ng-src="{{contact.image}}" alt="{{contact.firstName}}" />
+
+          {{contact.firstName}} {{contact.familyName}}
+                 <span class="glyphicon glyphicon-envelope"></span> {{contact.email}}
+                 <span class="glyphicon glyphicon-remove" ng-click="remove(contact.firstName)"></span>
+            
+      </li>
+    </ul>
+    <footer>Copyright All Rights Reserved</footer>
+  </body>
+</html>
